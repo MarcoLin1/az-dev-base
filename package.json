@@ -26,7 +26,12 @@
     "test-watch": "eslint --ext .js ./test/library && cross-env NODE_ENV=test mocha --watch ./test --watch-extensions js,ts --require ./test/babel-register.js './test/library/**/*.spec.js'"
   },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "deepcopy": "^2.0.0",
+    "docxtemplater": "^3.17.1",
+    "number-to-chinese-words": "^1.0.20",
+    "pizzip": "^3.0.6"
+  },
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
