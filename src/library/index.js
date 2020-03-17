@@ -12,12 +12,14 @@ import d from './data';
 // const toCurrency = number => number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 const toCurrency = number => number.toFixed().replace(/\d(?=(\d{3})+$)/g, '$&,');
 
-ntcw.labels = Object.assign({}, ntcw.labels, {
-  // digits: ['零', '壹', '貳', '參', '肆', '伍', '陸', '柒', '捌', '玖'],
-  // units: ['', '拾', '佰', '仟', '萬', '拾', '佰', '仟', '億', '拾', '佰', '仟', '兆', '拾', '佰', '仟', '京', '拾', '佰', '仟', '垓']
-  digits: ['〇', '一', '二', '三', '四', '五', '六', '七', '八', '九'],
-  units: ['', '十', '百', '千', '萬', '十', '百', '千', '億', '十', '百', '千', '兆', '十', '百', '千', '京', '十', '百', '千', '垓'],
-});
+// ntcw.labels = Object.assign({}, ntcw.labels, {
+//   // digits: ['零', '壹', '貳', '參', '肆', '伍', '陸', '柒', '捌', '玖'],
+//   // units: ['', '拾', '佰', '仟', '萬', '拾', '佰', '仟', '億', '拾', '佰', '仟', '兆', '拾', '佰', '仟', '京', '拾', '佰', '仟', '垓']
+//   digits: ['〇', '一', '二', '三', '四', '五', '六', '七', '八', '九'],
+//   units: ['', '十', '百', '千', '萬', '十', '百', '千', '億', '十', '百', '千', '兆', '十', '百', '千', '京', '十', '百', '千', '垓'],
+// });
+
+const digits = ['〇', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
 
 // The error object contains additional information when logged with JSON.stringify (it contains a properties object containing all suberrors).
 function replaceErrors(key, value) {
@@ -140,7 +142,7 @@ const normalizeData = (data) => {
   const contractDate = moment(newData.contract.date, 'YYYYMMDD');
   const cMinguoYear = `${contractDate.year() - 1911}`
   .split('')
-  .map(c => ntcw.toWords(+c))
+  .map(c => digits[+c])
   .join('');
   newData.contractDate = {
     cMinguoYear,
