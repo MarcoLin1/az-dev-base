@@ -29,6 +29,7 @@
   "dependencies": {
     "deepcopy": "^2.0.0",
     "docxtemplater": "^3.17.1",
+    "moment": "^2.24.0",
     "number-to-chinese-words": "^1.0.20",
     "pizzip": "^3.0.6"
   },
