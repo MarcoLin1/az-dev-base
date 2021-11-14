@@ -1,5 +1,5 @@
 {
-  "name": "az-dev-base",
+  "name": "rick-1114-lib",
   "version": "1.0.0",
   "description": "A general purpose seed project base",
   "main": "dist/library/index.js",

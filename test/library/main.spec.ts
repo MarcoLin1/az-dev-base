@@ -1,7 +1,14 @@
 /* eslint-disable no-unused-vars, no-undef */
 
 import chai from 'chai';
-import mainFunc from 'library';
+import {
+  toDashed,
+  capitalizeFirstLetter,
+  toUnderscore,
+  toCurrency,
+  toFloatCurrency,
+  leftJustify,
+ } from 'library';
 
 import {
   data01,
@@ -17,39 +24,24 @@ const { expect } = <any>chai;
 
 describe('Main Test Cases', () => {
   describe('Basic', () => {
-    it('mainFunc should be a function', () => {
-      expect(mainFunc).to.be.an.instanceof(Function);
+    it('toDashed should work', () => {
+      const tartgetString = 'azXxxPpp';
+      const dashed = toDashed(tartgetString);
+      const capitalizeFirstLetterResult = capitalizeFirstLetter(tartgetString);
+      expect(capitalizeFirstLetterResult).to.equal('AzXxxPpp');
+      const underscore = toUnderscore(tartgetString);
+      expect(underscore).to.equal('az_xxx_ppp');
+
+      console.log(' ======= underscore ======= ');
+      expect(dashed).to.equal('az-xxx-ppp');
+
+      console.log('toCurrency(334435435435) :', toCurrency(334435435435));
+      
+      toFloatCurrency(2344353.35344, 2)
+      console.log('toFloatCurrency(2344353.35644, 2) :', toFloatCurrency(2344353.35644, 2));
+      
+      console.log('leftJustify("1", 5, "0") :', leftJustify('1', 5, '0'));
       return true;
-    });
-
-    it('mainFunc should return a Promise', () => {
-      const result = mainFunc({ xxx: 'xxx' });
-      expect(result).to.be.an.instanceof(Promise);
-      return true;
-    });
-  });
-
-  describe('Echo Test', () => {
-    it('.then()', () => mainFunc(data01)
-        .then((result) => {
-          expect(result).to.exists;
-          expect(result.val01).to.equal(1);
-        }));
-
-    it('.catch()', () => {
-      let then = false;
-      return mainFunc(null, err01)
-        .then(() => {
-          then = true;
-          throw Error();
-        })
-        .catch((result) => {
-          if (then) {
-            throw Error();
-          }
-          expect(result).to.exists;
-          expect(result.message).to.equal('Error');
-        });
     });
   });
 });
