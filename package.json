@@ -1,6 +1,6 @@
 {
-  "name": "rick-1114-lib",
-  "version": "1.0.1",
+  "name": "marco-1114-lib",
+  "version": "1.1.0",
   "description": "A general purpose seed project base",
   "main": "dist/library/index.js",
   "repository": {

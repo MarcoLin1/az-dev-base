@@ -2,7 +2,7 @@ declare const defaultCallbackPromise: ({ result, error }: {
     result: any;
     error: any;
 }) => Promise<any>;
-declare function isFunction(object: any): boolean;
+declare function isFunction(object: any): any;
 declare function isFunctionV2(object: any): boolean;
 declare const lowerTheFirstLetter: (str: any) => any;
 declare const toCamel: (str: any) => any;

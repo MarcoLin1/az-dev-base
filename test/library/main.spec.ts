@@ -8,7 +8,8 @@ import {
   toCurrency,
   toFloatCurrency,
   leftJustify,
- } from 'library';
+  toSafename
+} from 'library';
 
 import {
   data01,
@@ -36,12 +37,14 @@ describe('Main Test Cases', () => {
       expect(dashed).to.equal('az-xxx-ppp');
 
       console.log('toCurrency(334435435435) :', toCurrency(334435435435));
-      
+
       toFloatCurrency(2344353.35344, 2)
       console.log('toFloatCurrency(2344353.35644, 2) :', toFloatCurrency(2344353.35644, 2));
-      
+
       console.log('leftJustify("1", 5, "0") :', leftJustify('1', 5, '0'));
-      return true;
+
+      toSafename('go back home')
+      // console.log(toSafename('go back home'))
     });
   });
 });
